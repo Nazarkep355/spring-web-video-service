@@ -23,5 +23,6 @@ public class Show {
     private String name;
     @OneToMany(mappedBy = "show")
     private List<Season> seasons;
+    private String description;
 
 }

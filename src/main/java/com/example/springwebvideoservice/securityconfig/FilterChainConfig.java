@@ -17,7 +17,13 @@ public class FilterChainConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
         http
                 .csrf()
-                .disable();
+                .disable()
+                .authorizeHttpRequests()
+                .requestMatchers("/api/open")
+                .permitAll()
+                .anyRequest()
+                .authenticated();
+
 
         return http.build();
     }

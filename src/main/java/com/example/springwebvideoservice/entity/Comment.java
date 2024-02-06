@@ -7,25 +7,20 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
+@Entity
+@Table(name = "reviews")
 @Data
 @Builder
-@Entity
-@Table
 @AllArgsConstructor
 @RequiredArgsConstructor
-public class Season {
+public class Comment {
     @Id
     private Long id;
-    private String name;
     @ManyToOne
-    private Show show;
-    private int numberOfEpisodes;
-    private LocalDateTime releaseDate;
-    @OneToMany
-    private List<Episode> episodes;
-    private double rating;
-    @OneToMany
-    private List<Comment> comments;
+    private User user;
+    @ManyToOne
+    private Season season;
+    private String text;
+    private LocalDateTime uploadTime;
 }

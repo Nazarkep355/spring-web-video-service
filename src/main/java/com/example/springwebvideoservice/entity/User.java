@@ -2,6 +2,7 @@ package com.example.springwebvideoservice.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.*;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +30,8 @@ public class User implements UserDetails{
     private LocalDateTime registrationDate;
     private Role role;
     private boolean expired;
+    @OneToMany
+    private List<Comment> comments;
 
 
     @Override

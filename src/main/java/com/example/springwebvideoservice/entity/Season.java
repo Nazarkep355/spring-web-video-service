@@ -17,6 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class Season {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     @ManyToOne

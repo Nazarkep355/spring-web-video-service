@@ -19,6 +19,7 @@ import java.util.List;
 
 public class Show {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     @OneToMany(mappedBy = "show")

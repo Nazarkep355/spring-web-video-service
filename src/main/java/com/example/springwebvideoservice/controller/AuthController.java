@@ -17,7 +17,7 @@ public class AuthController {
         return service.login(request);
 }
     @PostMapping("/api/register")
-    public AuthResponse register(  AuthRequest request){
+    public AuthResponse register( AuthRequest request){
         return service.register(request);
     }
     @GetMapping("/api/open")

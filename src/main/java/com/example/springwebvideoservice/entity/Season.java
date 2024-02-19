@@ -29,4 +29,5 @@ public class Season {
     private double rating;
     @OneToMany
     private List<Comment> comments;
+    private String poster;
 }

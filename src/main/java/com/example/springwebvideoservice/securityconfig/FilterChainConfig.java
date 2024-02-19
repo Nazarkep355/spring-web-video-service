@@ -35,7 +35,8 @@ public class FilterChainConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeHttpRequests()
-                 .requestMatchers("/api/open", "/api/login", "api/register")
+                 .requestMatchers("/api/open", "/api/login", "/api/register",
+                         "/api/seasons/latest")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -55,7 +56,9 @@ public class FilterChainConfig {
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:5173",
                                 "http://51.20.136.177:80",
-                                "http://51.20.136.177")
+                                "http://51.20.136.177",
+                                "http://ec2-51-20-136-177.eu-north-1.compute.amazonaws.com:80",
+                                "http://ec2-51-20-136-177.eu-north-1.compute.amazonaws.com")
                         .allowedMethods("*");
             }
         };

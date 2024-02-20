@@ -15,5 +15,6 @@ public class SeasonModel {
     private String name;
     private double rating;
     private LocalDateTime releaseDate;
+    private String poster;
 
 }

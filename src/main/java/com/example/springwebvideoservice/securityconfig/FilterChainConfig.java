@@ -36,7 +36,7 @@ public class FilterChainConfig {
                 .and()
                 .authorizeHttpRequests()
                  .requestMatchers("/api/open", "/api/login", "/api/register",
-                         "/api/seasons/latest","/api/upload")
+                         "/api/seasons/latest","/api/upload","/video")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

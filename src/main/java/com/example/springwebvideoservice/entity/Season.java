@@ -12,6 +12,7 @@ import java.util.List;
 @Table
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Season {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)

@@ -24,11 +24,12 @@ import java.time.LocalDateTime;
 public class SeasonUploadController {
     final ModelMapperService mapperService;
     final SeasonManagementService seasonService;
+
     @PostMapping
-    public ResponseEntity<SeasonModel> addNewSeason(HttpServletRequest request, MultipartFile file){
+    public ResponseEntity<SeasonModel> addNewSeason(HttpServletRequest request, MultipartFile file) {
         Season season = seasonService.parseRequest(request);
-        Season savedSeason = seasonService.saveNewSeason(season,file);
-        return ResponseEntity.ok(mapperService.mapObject(savedSeason,SeasonModel.class));
+        Season savedSeason = seasonService.saveNewSeason(season, file);
+        return ResponseEntity.ok(mapperService.mapObject(savedSeason, SeasonModel.class));
     }
 
 }

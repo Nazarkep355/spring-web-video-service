@@ -10,12 +10,14 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @RequiredArgsConstructor
+@NoArgsConstructor
 public class Episode {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
     private String name;
     private String source;
+    private int index;
     @NonNull
     @ManyToOne
     private Season season;

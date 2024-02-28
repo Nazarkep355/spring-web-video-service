@@ -14,6 +14,6 @@ import java.util.Optional;
 public interface SeasonRepository extends JpaRepository<Season, Long> {
     @Query("select s from Season s order by releaseDate desc")
     List<Season> findAllOrderByReleaseDateDesc(Pageable pageable);
-
+    Optional<Season> findById(Long id);
     Optional<Season> findByName(String name);
 }

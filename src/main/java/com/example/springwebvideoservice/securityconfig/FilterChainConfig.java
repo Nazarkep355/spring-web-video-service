@@ -38,6 +38,12 @@ public class FilterChainConfig {
                  .requestMatchers("/api/open", "/api/login", "/api/register",
                          "/api/seasons/latest","/api/upload","/video")
                 .permitAll()
+                .and()
+                .authorizeHttpRequests()
+                .requestMatchers("/api/seasons/add","api/episodes/add")
+                .hasAuthority("ADMIN")
+                .and()
+                .authorizeHttpRequests()
                 .anyRequest()
                 .authenticated()
                 .and()

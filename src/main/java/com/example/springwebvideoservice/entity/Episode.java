@@ -1,10 +1,7 @@
 package com.example.springwebvideoservice.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDateTime;
 @Entity
@@ -19,6 +16,7 @@ public class Episode {
     private Long id;
     private String name;
     private String source;
+    @NonNull
     @ManyToOne
     private Season season;
     private LocalDateTime uploadDate;

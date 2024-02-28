@@ -18,7 +18,7 @@ public class UploadController {
     private final AWSStreamingService streamingService;
     @PostMapping("/api/upload")
     public ResponseEntity<String> uploadFile(MultipartFile file){
-        return ResponseEntity.ok(s3Service.uploadFile(file) );
+        return ResponseEntity.ok(s3Service.uploadFile(file));
     }
     @GetMapping("/video")
     public Mono<Resource> getVideo(){
